@@ -2,12 +2,22 @@
 
 @section('content')
     <h1>Create</h1>
+    @if ( $errors->any() )
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul> 
+        </div>
+    @endif
+
 
     <form action="{{ route("comics.store") }}" method="POST">
         @csrf
         
             <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title">
+            <input type="text" class="form-control" id="title" name="title" value="{{ old("title") }}">
         
             <label for="description" class="form-label">Description</label>
             <input type="text" class="form-control" id="description" name="description" >
