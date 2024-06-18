@@ -26,12 +26,15 @@
           <td>{{ $curComic->series }}</td>
           <td> 
             <a class="btn btn-success" href="{{ route("comics.show", ["comic" => $curComic->id]) }}">Dettagli</a>
-            <a class="btn btn-danger" href="{{route('comics.edit' , ['comic' => $curComic->id])}}">Modifica</a> 
-
+          </td>
+          <td>
+            <a class="btn btn-primary" href="{{route('comics.edit' , ['comic' => $curComic->id])}}">Modifica</a> 
+          </td>
+          <td>
             <form action="{{ route('comics.destroy', ['comic' => $curComic->id])}}" method="POST">
               @csrf
               @method('DELETE')
-              <button>cancella</button>
+              <button class="btn btn-danger">Cancella</button>
             </form>
           </td>
 
