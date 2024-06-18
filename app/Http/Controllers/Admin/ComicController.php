@@ -35,6 +35,7 @@ class ComicController extends Controller
         $comic = new Comic();
         $comic->fill($data);
         $comic->save();
+        return redirect()->route("comics.show", ["comic" => $comic->id]);
     }
 
     /**
