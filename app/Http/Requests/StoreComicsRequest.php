@@ -31,4 +31,23 @@ class StoreComicsRequest extends FormRequest
             "type" => ["required"],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            "title.required" => "Il titolo non può essere vuoto.",
+            "title.min" => "Il titolo non può avere meno di 3 caratteri.",
+
+            "description.required" => "La descrizione non può essere vuota.",
+            "description.min" => "La descrizione non avere meno di 20 caratteri.",
+
+            "thumb.required" => "L'immagine non può essere vuota.",
+            "price.required" => "Il prezzo non può essere vuoto.",
+            "series.required" => "La serie non può essere vuota.",
+            "sale_date.required" => "La data di vendita non può essere vuota.",
+            "type.required" => "Il tipo non può essere vuoto."
+
+
+        ];
+    }
 }
