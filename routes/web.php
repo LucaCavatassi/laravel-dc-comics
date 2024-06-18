@@ -19,5 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/comics', [ComicController::class, "index"])->name("comic.index");
-Route::get("/comics/{comic}", [ComicController::class, "show"])->name("comic.show");
+// Route::get('/comics', [ComicController::class, "index"])->name("comic.index");
+// Route::get("/comics/{comic}", [ComicController::class, "show"])->name("comic.show");
+
+Route::resource("comics", ComicController::class);

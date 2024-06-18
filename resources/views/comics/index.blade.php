@@ -3,6 +3,10 @@
 @section('content')
     <h1>Comics page</h1>
 
+    <div>
+      <a href="{{ route("comics.create") }}">Aggiungi elemento</a>
+    </div>
+
     <table class="table">
         <thead>
           <tr>
@@ -20,7 +24,7 @@
           <td>{{ $curComic->title }}</td>
           <td>{{ $curComic->price }}</td>
           <td>{{ $curComic->series }}</td>
-          <td> <a class="btn btn-success" href="{{ route("comic.show", ["comic" => $curComic->id]) }}">Dettagli</a> </td>
+          <td> <a class="btn btn-success" href="{{ route("comics.show", ["comic" => $curComic->id]) }}">Dettagli</a> </td>
         </tr>
         @endforeach
         </tbody>
